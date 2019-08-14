@@ -115,10 +115,6 @@ class ElementNotFoundException(Exception):
         super(ElementNotFoundException, self).__init__(message)
 
 
-class NoPathException(Exception):
-    """ Raised when user hasn't defined path with files """
-    pass
-
 
 def get_html_by_url(url):
     """ Download html from url. Raises errors when can't get html """
@@ -150,13 +146,11 @@ def main():
 
     # Get tag values.
     url = conf.pop('url', None)
-    path = conf.pop('path', None)
-    if path is None:
-        raise NoPathException
+    path = conf.pop('path', './')
     album = conf.pop('album', None)
     artist = conf.pop('artist', None)
-    song_selector = conf.pop('songs', None)
     year = conf.pop('year', None)
+    song_selector = conf.pop('songs', None)
 
     # Get original files
     files = [f for f in os.listdir(path) if f.endswith('.mp3')]
@@ -189,3 +183,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
