@@ -28,7 +28,7 @@ The JSON must contain keys:
 It may not necessarily contain keys:
 - "path": path to the directory with original mp3 files. Basically the current directory is used;
 - "year": year tag;
-- "artist": artist tag;  
+- "artist": artist tag.  
 
 **All values in the JSON are string literals!**
 ### JSON example
