@@ -24,6 +24,7 @@ The JSON must contain keys:
 - "album": album tag. It is used as directory name for resulting files;
 - "songs": CSS selector to the first element of list with songs;
 - "url": address of the page that contanins the CSS selector.  
+
 It may not necessarily contain keys:
 - "path": path to the directory with original mp3 files. Basically the current directory is used;
 - "year": year tag;
