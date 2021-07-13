@@ -1,21 +1,21 @@
 # Partag3
-A utility to massively update mp3 tags with parsing of songs from html
+A utility to massively update mp3-tags by parsing of songs from html
 
 
 ## Getting started
-Get core file `partag3.py` or its code and install required modules, e.g. using pip and requirements file
+Get the core file `partag3.py` or its code and install required modules, e.g. using pip and requirements.txt file
 ```
 pip install -r requirements.txt
 ```
 
-You have to run the script passing to it `conf.json` file. There are two options to do it:
+You have to run the script passing to it `conf.json` file. There are two options to do that:
 * Create "conf.json" in the current directory;
-* Pass an argument with "conf.json" path to the script, just like that
+* Pass an argument with the "conf.json" path to the script, just like that
 ```
 python3 partag3 ../some/dirs/
 ```
-It will be searching for "conf.json" in the "...dirs/" directory  
-You can specify path to another .json like that
+It´s going to search for "conf.json" in the "...dirs/" directory  
+You can specify path to another json file like that
 ```
 python3 partag3 ../some/dirs/my_album_conf.json
 ```
