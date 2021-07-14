@@ -1,37 +1,59 @@
 # Partag3
-A utility to massively update mp3-tags by parsing of songs from html
 
+A utility to massively update mp3-tags by parsing them from html.
 
-## Getting started
-Get the core file `partag3.py` or its code and install required modules, e.g. using pip and requirements.txt file
+## How to use
+
+1. As library
+
+Use the `TagOnPage` class to parse sibling songs.
+
+```python
+from src.partag3.tag_on_page import TagOnPage
+
+# parse 'songs' from 'url' using the 'css-selector'
+parser = TagOnPage('song', 'http://url.com', selector='.css-selector')
+songs = parser.list_from_siblings  # type: List[str]
 ```
-pip install -r requirements.txt
-```
 
-You have to run the script passing to it `conf.json` file. There are two options to do that:
+2. As script
+
+> Install dependencies: `pip3 install -r requirements.txt`
+
+You have to run the `main.py` pointing to your `conf.json` file. There are two options to do that:
+
 * Create "conf.json" in the current directory;
 * Pass an argument with the "conf.json" path to the script, just like that
+
 ```
-python3 partag3 ../some/dirs/
+python3 main.py ../some/dirs/
 ```
+
 It´s going to search for "conf.json" in the "...dirs/" directory  
 You can specify path to another json file like that
+
 ```
-python3 partag3 ../some/dirs/my_album_conf.json
+python3 main.py ../some/dirs/my_album_conf.json
 ```
+
 ### JSON keys and values
-The JSON must contain keys:  
+
+The JSON file must contain following keys:
+
 - "album": album tag. It is used as directory name for resulting files;
 - "songs": CSS selector to the first element of list with songs;
-- "url": address of the page that contanins the CSS selector.  
+- "url": address of the page that contains the CSS selector.
 
 It may not necessarily contain keys:
+
 - "path": path to the directory with original mp3 files. Basically the current directory is used;
 - "year": year tag;
-- "artist": artist tag.  
+- "artist": artist tag.
 
 **All values in the JSON are string literals!**
+
 ### JSON example
+
 ```
 {
     "url": "https://some_address",
